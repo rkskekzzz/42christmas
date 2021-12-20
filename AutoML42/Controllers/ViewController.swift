@@ -8,6 +8,7 @@
 import UIKit
 import MLImage
 import MLKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -18,35 +19,25 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var addImageButton: UIButton!
     
-    var history: [UIImage] = []
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    
     var resultText: String = ""
     let picker = UIImagePickerController()
-    
-
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // [Styleing]
         styleButton()
         styleImageView()
+        
+        // [Set delegate]
         picker.delegate = self
+        
+        // for debug
+        
     }
-    
-    func openLibrary(){
-      picker.sourceType = .photoLibrary
-      present(picker, animated: false, completion: nil)
-    }
-    func openCamera(){
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)) {
-        picker.sourceType = .camera
-        present(picker, animated: false, completion: nil)
-        }
-        else {
-            print("Camera not available")
-        }
-    }
+
 
     // MARK: - IBActions
 
@@ -79,9 +70,16 @@ class ViewController: UIViewController {
               return
             }
             
+            // for debug
             labels.forEach{ label in
                 print("label : \(label)")
             }
+            
+            let history = History(context: strongSelf.context)
+            history.id = UUID()
+            history.intraID = "suhshin"
+            
+            strongSelf.saveHistory()
             
             strongSelf.resultText = labels.map { label -> String in
               return "Label: \(label.text), Confidence: \(label.confidence), Index: \(label.index)"
@@ -115,6 +113,28 @@ class ViewController: UIViewController {
     
     
     // MARK: - Private
+    
+    private func saveHistory() {
+        do {
+            try context.save()
+        } catch {
+            print("save error")
+        }
+    }
+    
+    private func openLibrary(){
+      picker.sourceType = .photoLibrary
+      present(picker, animated: false, completion: nil)
+    }
+    private func openCamera(){
+        if(UIImagePickerController .isSourceTypeAvailable(.camera)) {
+        picker.sourceType = .camera
+        present(picker, animated: false, completion: nil)
+        }
+        else {
+            print("Camera not available")
+        }
+    }
     
     private func showResult() {
         resultsTextLabel.text = resultText
