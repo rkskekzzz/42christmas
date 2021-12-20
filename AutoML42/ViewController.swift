@@ -43,8 +43,9 @@ class ViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func detectButtonTabbed(_ sender: Any) {
-        let image = VisionImage(image: imageView.image)
-        visionImage.orientation = image.imageOrientation
+        print("hello") ; print("hi")
+//        let image = VisionImage(image: imageView.image)
+//        visionImage.orientation = image.imageOrientation
     }
     
     @IBAction func addImage(_ sender: Any) {

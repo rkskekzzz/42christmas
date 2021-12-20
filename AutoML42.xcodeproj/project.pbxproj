@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		00BAA075F6E7078AC427DD8B /* Pods_AutoML42Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F7AA7868731102617A1245 /* Pods_AutoML42Tests.framework */; };
 		5860218681E770961DADFDAE /* Pods_AutoML42_AutoML42UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEE463B344E3E55E0441F7B /* Pods_AutoML42_AutoML42UITests.framework */; };
-		900BE38E277053C800D04E8E /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 900BE38D277053C800D04E8E /* test.png */; };
+		900BE390277071B500D04E8E /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 900BE38F277071B500D04E8E /* test.png */; };
 		9034BC22276CFCF7009A6545 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC21276CFCF7009A6545 /* AppDelegate.swift */; };
 		9034BC24276CFCF7009A6545 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC23276CFCF7009A6545 /* SceneDelegate.swift */; };
 		9034BC26276CFCF7009A6545 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC25276CFCF7009A6545 /* ViewController.swift */; };
@@ -44,7 +44,7 @@
 		1AC3B85712EDADD795C536C9 /* Pods-AutoML42-AutoML42UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42-AutoML42UITests.release.xcconfig"; path = "Target Support Files/Pods-AutoML42-AutoML42UITests/Pods-AutoML42-AutoML42UITests.release.xcconfig"; sourceTree = "<group>"; };
 		4EB69187D5E21B9D127F7B7F /* Pods-AutoML42Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42Tests.release.xcconfig"; path = "Target Support Files/Pods-AutoML42Tests/Pods-AutoML42Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7230F1AB580E81F188BCDAB0 /* Pods_AutoML42.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoML42.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		900BE38D277053C800D04E8E /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = ../../test.png; sourceTree = "<group>"; };
+		900BE38F277071B500D04E8E /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		9034BC1E276CFCF7009A6545 /* AutoML42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoML42.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9034BC21276CFCF7009A6545 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9034BC23276CFCF7009A6545 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		900BE38C276FB2B300D04E8E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				900BE38D277053C800D04E8E /* test.png */,
+				900BE38F277071B500D04E8E /* test.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 				9034BC2E276CFCF8009A6545 /* LaunchScreen.storyboard in Resources */,
 				9034BC2B276CFCF8009A6545 /* Assets.xcassets in Resources */,
 				9034BC29276CFCF7009A6545 /* Main.storyboard in Resources */,
-				900BE38E277053C800D04E8E /* test.png in Resources */,
+				900BE390277071B500D04E8E /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
