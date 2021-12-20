@@ -16,17 +16,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var resultsTextLabel: UILabel!
     
+    @IBOutlet weak var addImageButton: UIButton!
+    
+
+    
     var resultText: String = ""
     let picker = UIImagePickerController()
+    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        styleButton()
+        styleImageView()
         picker.delegate = self
-        let image2 = UIImage(named: "test")
-        imageView.image = image2
-        titleLabel.text = "hello world"
     }
     
     func openLibrary(){
@@ -113,6 +116,21 @@ class ViewController: UIViewController {
     
     private func showResult() {
         resultsTextLabel.text = resultText
+    }
+    
+    private func styleButton() {
+        addImageButton.layer.cornerRadius = 0.5 * addImageButton.bounds.size.width
+        addImageButton.clipsToBounds = true
+        addImageButton.layer.borderWidth = 1.0
+        addImageButton.layer.borderColor = UIColor.white.cgColor
+        addImageButton.layer.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
+        addImageButton.titleLabel?.textColor = UIColor.white
+    }
+    
+    private func styleImageView() {
+        let image2 = UIImage(named: "background2.jpg")
+        imageView.image = image2
+        imageView.contentMode = .scaleAspectFill
     }
 }
 
