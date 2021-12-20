@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var addImageButton: UIButton!
     
+    var history: [UIImage] = []
+    
 
     
     var resultText: String = ""
