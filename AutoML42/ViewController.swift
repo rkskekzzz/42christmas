@@ -10,10 +10,13 @@ import MLImage
 import MLKit
 
 class ViewController: UIViewController {
-
     
+    // MARK: - IBOutlet
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var resultsTextLabel: UILabel!
+    
+    var resultText: String = ""
     let picker = UIImagePickerController()
 
     
@@ -43,9 +46,45 @@ class ViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func detectButtonTabbed(_ sender: Any) {
-        print("hello") ; print("hi")
-//        let image = VisionImage(image: imageView.image)
-//        visionImage.orientation = image.imageOrientation
+        guard let image = imageView.image else { return }
+        
+        let options = ImageLabelerOptions()
+        options.confidenceThreshold = 0.7
+        
+        // [START init_label]
+        let onDeviceLabeler = ImageLabeler.imageLabeler(options: options)
+        // [END init_label]
+
+        // Initialize a `VisionImage` object with the given `UIImage`.
+        let visionImage = VisionImage(image: image)
+        visionImage.orientation = image.imageOrientation
+        
+        weak var weakSelf = self
+        onDeviceLabeler.process(visionImage) { labels, error in
+            guard let strongSelf = weakSelf else {
+                print("self is nil")
+                return
+            }
+            guard error == nil, let labels = labels, !labels.isEmpty else {
+              // [START_EXCLUDE]
+              let errorString = error?.localizedDescription ?? "test message"
+                strongSelf.resultText = "On-Device label detection failed with error: \(errorString)"
+                strongSelf.showResult()
+              // [END_EXCLUDE]
+              return
+            }
+            
+            labels.forEach{ label in
+                print("label : \(label)")
+            }
+            
+            strongSelf.resultText = labels.map { label -> String in
+              return "Label: \(label.text), Confidence: \(label.confidence), Index: \(label.index)"
+            }.joined(separator: "\n")
+            strongSelf.showResult()
+        
+        }
+        
     }
     
     @IBAction func addImage(_ sender: Any) {
@@ -67,6 +106,13 @@ class ViewController: UIViewController {
         alert.addAction(cancel)
 
         present(alert, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Private
+    
+    private func showResult() {
+        resultsTextLabel.text = resultText
     }
 }
 
