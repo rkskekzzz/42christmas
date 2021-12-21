@@ -34,10 +34,12 @@ class HistoryViewController: UIViewController {
     }
     
     private func bind() {
-        let width = (view.frame.width - 20)/3
+        let width = (view.frame.width )/3
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: width, height: width)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
         historyCollectionView = HistoryCollectionView(frame: self.view.frame, collectionViewLayout: layout)
     }
     
@@ -90,8 +92,9 @@ extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDel
         
         let image = UIImage(data: imageData)!
         let id = histories[indexPath.row].intraID!
+        let check = histories[indexPath.row].check
         
-        cell.update(with: image, userID: id)
+        cell.update(with: image, userID: id, check: check)
         
         return cell
     }

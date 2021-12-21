@@ -97,8 +97,13 @@ class ViewController: UIViewController {
             //            strongSelf.showResult()
             
             let imageData = image.jpegData(compressionQuality: 1.0)
+            let check  = labels[0].text == "Christmas" ? true : false
             
-            strongSelf.showTextInputAlert(saveWithImage: imageData)
+            print("-------------------")
+            print(labels[0].text)
+            print("-------------------")
+            
+            strongSelf.showTextInputAlert(saveWithImage: imageData, check: check)
         }
         
     }
@@ -155,7 +160,7 @@ class ViewController: UIViewController {
         popupImageView.fadeInOut()
     }
     
-    private func showTextInputAlert(saveWithImage imageData: Data?) {
+    private func showTextInputAlert(saveWithImage imageData: Data?, check: Bool) {
         guard let imageData = imageData else { return }
         let alert = UIAlertController(title: "intra ID를 입력해 주세요!", message: "", preferredStyle: .alert)
         
@@ -169,6 +174,7 @@ class ViewController: UIViewController {
             history.id = UUID()
             history.image = imageData
             history.intraID = textFields[0].text
+            history.check = check
             
             strongSelf.saveHistory()
             strongSelf.showResult()
