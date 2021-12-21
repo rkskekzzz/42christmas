@@ -11,47 +11,126 @@ import MLKit
 import CoreData
 
 class ViewController: UIViewController {
+    static let showHistorySegueIdentifier = "ShowHistorySegue"
     
     // MARK: - IBOutlet
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var popupImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var resultsTextLabel: UILabel!
     @IBOutlet weak var addImageButton: UIButton!
     
-    static let showHistorySegueIdentifier = "ShowHistorySegue"
+    
+    // MARK: - Properties
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let picker = UIImagePickerController()
     
-    var resultText: String = ""
-    
+    private var resultText: String = ""
     private var userID: String?
     
+    // MARK: - UIViewController
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // [Styleing]
-        styleButton()
-        styleImageView()
-        
-        // [Set delegate]
-        picker.delegate = self
-        
-        // for debug
+        configure()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Self.showHistorySegueIdentifier,
-           let destination = segue.destination as? HistoryViewController,
+           let _ = segue.destination as? HistoryViewController,
             let _ = userID {
 //            destination.configure() {
                 print("\n\nview is changed!\n\n")
 //            }
         }
     }
-
+    // MARK: - Private
+    
+    private func configure() {
+        self.configureButton()
+        self.configureImageView()
+        picker.delegate = self
+    }
+    
+    private func saveHistory() {
+        do {
+            try context.save()
+        } catch {
+            print("save error")
+        }
+    }
+    
+    private func openLibrary(){
+      picker.sourceType = .photoLibrary
+      present(picker, animated: false, completion: nil)
+    }
+    
+    private func openCamera(){
+        if(UIImagePickerController .isSourceTypeAvailable(.camera)) {
+        picker.sourceType = .camera
+        present(picker, animated: false, completion: nil)
+        }
+        else {
+            print("Camera not available")
+        }
+    }
+    
+    private func showResult() {
+        popupImageView.fadeInOut()
+    }
+    
+    private func showTextInputAlert(saveWithImage imageData: Data?, check: Bool) {
+        guard let imageData = imageData else { return }
+        let alert = UIAlertController(title: "intra ID를 입력해 주세요!", message: "", preferredStyle: .alert)
+        
+        weak var weakSelf = self
+        let ok = UIAlertAction(title: "OK", style: .default) { (ok) in
+            guard let strongSelf = weakSelf else { return }
+            guard let textFields = alert.textFields else { return }
+            
+            let history = History(context: strongSelf.context)
+            
+            history.id = UUID()
+            history.image = imageData
+            history.intraID = textFields[0].text
+            history.check = check
+            
+            strongSelf.saveHistory()
+            strongSelf.showResult()
+        }
+        
+        alert.addTextField { textField in
+            textField.textColor = .black
+        }
+        
+        alert.addAction(ok)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func configureButton() {
+        addImageButton.layer.cornerRadius = 0.5 * addImageButton.bounds.size.width
+        addImageButton.clipsToBounds = true
+        addImageButton.layer.borderWidth = 1.0
+        addImageButton.layer.borderColor = UIColor.white.cgColor
+        addImageButton.layer.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
+        addImageButton.titleLabel?.textColor = UIColor.white
+    }
+    
+    private func configureImageView() {
+        let backgroundImage = UIImage(named: "background2.jpg")
+        let popupImage = UIImage(named: "popup.png")
+        
+        backgroundImageView.image = backgroundImage
+        backgroundImageView.contentMode = .scaleAspectFill
+        
+        popupImageView.image = popupImage
+        popupImageView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
+        popupImageView.isHidden = true
+        
+    }
 
     // MARK: - IBActions
 
@@ -129,88 +208,6 @@ class ViewController: UIViewController {
 
         present(alert, animated: true, completion: nil)
     }
-    
-    
-    // MARK: - Private
-    
-    private func saveHistory() {
-        do {
-            try context.save()
-        } catch {
-            print("save error")
-        }
-    }
-    
-    private func openLibrary(){
-      picker.sourceType = .photoLibrary
-      present(picker, animated: false, completion: nil)
-    }
-    
-    private func openCamera(){
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)) {
-        picker.sourceType = .camera
-        present(picker, animated: false, completion: nil)
-        }
-        else {
-            print("Camera not available")
-        }
-    }
-    
-    private func showResult() {
-        popupImageView.fadeInOut()
-    }
-    
-    private func showTextInputAlert(saveWithImage imageData: Data?, check: Bool) {
-        guard let imageData = imageData else { return }
-        let alert = UIAlertController(title: "intra ID를 입력해 주세요!", message: "", preferredStyle: .alert)
-        
-        weak var weakSelf = self
-        let ok = UIAlertAction(title: "OK", style: .default) { (ok) in
-            guard let strongSelf = weakSelf else { return }
-            guard let textFields = alert.textFields else { return }
-            
-            let history = History(context: strongSelf.context)
-            
-            history.id = UUID()
-            history.image = imageData
-            history.intraID = textFields[0].text
-            history.check = check
-            
-            strongSelf.saveHistory()
-            strongSelf.showResult()
-        }
-        
-        alert.addTextField { textField in
-            textField.textColor = .black
-        }
-        
-        alert.addAction(ok)
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    private func styleButton() {
-        addImageButton.layer.cornerRadius = 0.5 * addImageButton.bounds.size.width
-        addImageButton.clipsToBounds = true
-        addImageButton.layer.borderWidth = 1.0
-        addImageButton.layer.borderColor = UIColor.white.cgColor
-        addImageButton.layer.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
-        addImageButton.titleLabel?.textColor = UIColor.white
-    }
-    
-    private func styleImageView() {
-        let backgroundImage = UIImage(named: "background2.jpg")
-        let popupImage = UIImage(named: "popup.png")
-        
-        backgroundImageView.image = backgroundImage
-        backgroundImageView.contentMode = .scaleAspectFill
-        
-        popupImageView.image = popupImage
-        popupImageView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
-        popupImageView.isHidden = true
-        
-    }
-    
 }
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -227,6 +224,7 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
 
 extension UIView {
     // MARK: - UIView extension
+    
     func fadeInOut() {
         self.alpha = 0
         self.isHidden = false
