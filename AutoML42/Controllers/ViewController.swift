@@ -55,6 +55,10 @@ class ViewController: UIViewController {
 
     // MARK: - IBActions
 
+    @IBAction func historyButtonTabbed(_ sender: Any) {
+        performSegue(withIdentifier: Self.showHistorySegueIdentifier, sender: self)
+    }
+    
     @IBAction func detectButtonTabbed(_ sender: Any) {
         guard let image = backgroundImageView.image else { return }
         
@@ -105,7 +109,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func addImage(_ sender: Any) {
+    @IBAction func addImageButtonTabbed(_ sender: Any) {
         let alert =  UIAlertController(title: "원하는 타이틀", message: "원하는 메세지", preferredStyle: .actionSheet)
         
         let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in
@@ -154,7 +158,6 @@ class ViewController: UIViewController {
     }
     
     private func showResult() {
-        resultsTextLabel.text = resultText
         popupImageView.fadeInOut()
     }
     
