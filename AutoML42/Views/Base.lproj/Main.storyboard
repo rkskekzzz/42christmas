@@ -73,11 +73,28 @@
                         <outlet property="imageView" destination="ZW4-yk-XpR" id="HRK-cr-RJ6"/>
                         <outlet property="resultsTextLabel" destination="hkI-bW-xYX" id="Gle-Q9-Y59"/>
                         <outlet property="titleLabel" destination="KTh-dZ-ie6" id="MQt-ix-inm"/>
+                        <segue destination="MTV-tJ-ONV" kind="show" identifier="ShowHistorySegue" id="njM-f6-56s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="CHd-9P-Sga">
+            <objects>
+                <viewController id="MTV-tJ-ONV" customClass="HistoryViewController" customModule="AutoML42" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Ss-LU-dO5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8Qp-vB-go4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B4V-55-tBi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggj-at-ODU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="135"/>
         </scene>
     </scenes>
     <resources>
