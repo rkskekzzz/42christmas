@@ -26,12 +26,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZW4-yk-XpR">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="resultsText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-bW-xYX">
-                                <rect key="frame" x="0.0" y="791" width="82" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLY-ge-3J0">
                                 <rect key="frame" x="132" y="373" width="150" height="150"/>
                                 <constraints>
@@ -52,13 +46,20 @@
                                     <action selector="detectButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aa0-we-5cS"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oma-Rz-Zk5">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="CdR-ED-sut"/>
+                                    <constraint firstAttribute="height" constant="200" id="wd1-7i-VQP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hkI-bW-xYX" secondAttribute="bottom" constant="50" id="40M-xb-4ml"/>
-                            <constraint firstItem="hkI-bW-xYX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Eys-HV-dkD"/>
+                            <constraint firstItem="Oma-Rz-Zk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RfJ-4W-7GH"/>
                             <constraint firstItem="ZW4-yk-XpR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TQZ-do-lSi"/>
+                            <constraint firstItem="Oma-Rz-Zk5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W4Y-Wz-SzA"/>
                             <constraint firstItem="xpd-Ff-rqb" firstAttribute="top" secondItem="pLY-ge-3J0" secondAttribute="bottom" constant="80" id="Xau-fE-eEe"/>
                             <constraint firstItem="pLY-ge-3J0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="d84-WO-nvc"/>
                             <constraint firstItem="pLY-ge-3J0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eb7-nd-Kw9"/>
@@ -70,8 +71,8 @@
                     </view>
                     <connections>
                         <outlet property="addImageButton" destination="pLY-ge-3J0" id="CUJ-gl-sjy"/>
-                        <outlet property="imageView" destination="ZW4-yk-XpR" id="HRK-cr-RJ6"/>
-                        <outlet property="resultsTextLabel" destination="hkI-bW-xYX" id="Gle-Q9-Y59"/>
+                        <outlet property="backgroundImageView" destination="ZW4-yk-XpR" id="HRK-cr-RJ6"/>
+                        <outlet property="popupImageView" destination="Oma-Rz-Zk5" id="qZg-BH-JJT"/>
                         <outlet property="titleLabel" destination="KTh-dZ-ie6" id="MQt-ix-inm"/>
                         <segue destination="MTV-tJ-ONV" kind="show" identifier="ShowHistorySegue" id="njM-f6-56s"/>
                     </connections>

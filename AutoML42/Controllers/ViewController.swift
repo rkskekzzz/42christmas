@@ -13,7 +13,8 @@ import CoreData
 class ViewController: UIViewController {
     
     // MARK: - IBOutlet
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var popupImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var resultsTextLabel: UILabel!
     @IBOutlet weak var addImageButton: UIButton!
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func detectButtonTabbed(_ sender: Any) {
-        guard let image = imageView.image else { return }
+        guard let image = backgroundImageView.image else { return }
         
         let options = ImageLabelerOptions()
         options.confidenceThreshold = 0.7
@@ -83,10 +84,13 @@ class ViewController: UIViewController {
               return
             }
             
-            strongSelf.resultText = labels.map { label -> String in
-              return "Label: \(label.text), Confidence: \(label.confidence), Index: \(label.index)"
-            }.joined(separator: "\n")
-            strongSelf.showResult()
+            strongSelf.resultText = labels[0].text
+            
+//            strongSelf.resultText = labels.map { label -> String in
+//              return "Label: \(label.text), Confidence: \(label.confidence), Index: \(label.index)"
+//            }.joined(separator: "\n")
+
+            //            strongSelf.showResult()
             
             let imageData = image.jpegData(compressionQuality: 1.0)
             let history = History(context: strongSelf.context)
@@ -96,6 +100,7 @@ class ViewController: UIViewController {
             history.image = imageData
             
             strongSelf.saveHistory()
+            strongSelf.showTextInputAlert()
         }
         
     }
@@ -150,6 +155,7 @@ class ViewController: UIViewController {
     
     private func showResult() {
         resultsTextLabel.text = resultText
+        popupImageView.fadeInOut()
     }
     
     private func showTextInputAlert() {
@@ -161,6 +167,7 @@ class ViewController: UIViewController {
             guard let textFields = alert.textFields else { return }
             
             strongSelf.userID = textFields[0].text
+            strongSelf.showResult()
         }
         
         alert.addTextField { textField in
@@ -182,9 +189,16 @@ class ViewController: UIViewController {
     }
     
     private func styleImageView() {
-        let image2 = UIImage(named: "background2.jpg")
-        imageView.image = image2
-        imageView.contentMode = .scaleAspectFill
+        let backgroundImage = UIImage(named: "background2.jpg")
+        let popupImage = UIImage(named: "popup.png")
+        
+        backgroundImageView.image = backgroundImage
+        backgroundImageView.contentMode = .scaleAspectFill
+        
+        popupImageView.image = popupImage
+        popupImageView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
+        popupImageView.isHidden = true
+        
     }
     
 }
@@ -195,12 +209,28 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             print(image)
-            imageView.image = image
+            backgroundImageView.image = image
         }
         dismiss(animated: true, completion: nil)
     }
 }
 
+extension UIView {
+    // MARK: - UIView extension
+    func fadeInOut() {
+        self.alpha = 0
+        self.isHidden = false
+        UIView.animate(withDuration: 3) { [weak self] in
+            self?.alpha = 1
+        } completion: { [weak self] (isFinish) in
+            UIView.animate(withDuration: 3, animations: {
+                self?.alpha = 0
+            }, completion: { (isFisish) in
+                self?.isHidden = true
+            })
+        }
+    }
+}
 
 
 
