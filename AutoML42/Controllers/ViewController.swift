@@ -97,14 +97,8 @@ class ViewController: UIViewController {
             //            strongSelf.showResult()
             
             let imageData = image.jpegData(compressionQuality: 1.0)
-            let history = History(context: strongSelf.context)
             
-            history.id = UUID()
-            history.intraID = "suhshin"
-            history.image = imageData
-            
-            strongSelf.saveHistory()
-            strongSelf.showTextInputAlert()
+            strongSelf.showTextInputAlert(saveWithImage: imageData)
         }
         
     }
@@ -161,7 +155,8 @@ class ViewController: UIViewController {
         popupImageView.fadeInOut()
     }
     
-    private func showTextInputAlert() {
+    private func showTextInputAlert(saveWithImage imageData: Data?) {
+        guard let imageData = imageData else { return }
         let alert = UIAlertController(title: "intra ID를 입력해 주세요!", message: "", preferredStyle: .alert)
         
         weak var weakSelf = self
@@ -169,7 +164,13 @@ class ViewController: UIViewController {
             guard let strongSelf = weakSelf else { return }
             guard let textFields = alert.textFields else { return }
             
-            strongSelf.userID = textFields[0].text
+            let history = History(context: strongSelf.context)
+            
+            history.id = UUID()
+            history.image = imageData
+            history.intraID = textFields[0].text
+            
+            strongSelf.saveHistory()
             strongSelf.showResult()
         }
         

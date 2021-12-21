@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +35,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Image"/>
                                 <connections>
-                                    <action selector="addImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8H4-m4-oFP"/>
+                                    <action selector="addImageButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJG-xd-mNF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpd-Ff-rqb">
@@ -87,9 +86,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addImageButton" destination="pLY-ge-3J0" id="CUJ-gl-sjy"/>
+                        <outlet property="addImageButton" destination="pLY-ge-3J0" id="4dC-bs-IQV"/>
                         <outlet property="backgroundImageView" destination="ZW4-yk-XpR" id="HRK-cr-RJ6"/>
-                        <outlet property="popupImageView" destination="Oma-Rz-Zk5" id="qZg-BH-JJT"/>
+                        <outlet property="popupImageView" destination="Oma-Rz-Zk5" id="6AQ-ci-Zku"/>
                         <outlet property="titleLabel" destination="KTh-dZ-ie6" id="MQt-ix-inm"/>
                         <segue destination="MTV-tJ-ONV" kind="show" identifier="ShowHistorySegue" id="njM-f6-56s"/>
                     </connections>
@@ -105,64 +104,10 @@
                     <view key="view" contentMode="scaleToFill" id="5Ss-LU-dO5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vB6-Nf-fyc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tXC-Xz-YZ5">
-                                    <size key="itemSize" width="200" height="230"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HistoryItemCell" id="UMj-vU-DPJ" customClass="HistoryItem" customModule="AutoML42" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="230"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JMx-7b-Dpp">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="230"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twv-fI-M59">
-                                                    <rect key="frame" x="0.0" y="209" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ze5-5s-Zqk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="209"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="twv-fI-M59" secondAttribute="bottom" id="JcW-03-Sav"/>
-                                                <constraint firstItem="twv-fI-M59" firstAttribute="top" secondItem="ze5-5s-Zqk" secondAttribute="bottom" id="OnW-aa-ipf"/>
-                                                <constraint firstItem="twv-fI-M59" firstAttribute="leading" secondItem="JMx-7b-Dpp" secondAttribute="leading" id="VfC-hG-EXM"/>
-                                                <constraint firstAttribute="trailing" secondItem="ze5-5s-Zqk" secondAttribute="trailing" id="Ydh-w0-DEz"/>
-                                                <constraint firstItem="ze5-5s-Zqk" firstAttribute="top" secondItem="JMx-7b-Dpp" secondAttribute="top" id="os8-Nd-qbv"/>
-                                                <constraint firstItem="ze5-5s-Zqk" firstAttribute="leading" secondItem="JMx-7b-Dpp" secondAttribute="leading" id="yuV-CF-IWe"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <connections>
-                                            <outlet property="itemImage" destination="ze5-5s-Zqk" id="Ygp-y9-RWg"/>
-                                            <outlet property="itemUserID" destination="twv-fI-M59" id="QUu-5y-oVk"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8Qp-vB-go4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="8Qp-vB-go4" firstAttribute="bottom" secondItem="vB6-Nf-fyc" secondAttribute="bottom" id="MtI-xK-5NM"/>
-                            <constraint firstItem="8Qp-vB-go4" firstAttribute="trailing" secondItem="vB6-Nf-fyc" secondAttribute="trailing" id="rg5-W8-Oa1"/>
-                            <constraint firstItem="vB6-Nf-fyc" firstAttribute="leading" secondItem="8Qp-vB-go4" secondAttribute="leading" id="tL1-fx-klE"/>
-                            <constraint firstItem="vB6-Nf-fyc" firstAttribute="top" secondItem="8Qp-vB-go4" secondAttribute="top" id="tsx-mB-cuj"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="B4V-55-tBi"/>
-                    <connections>
-                        <outlet property="historyCollectionView" destination="vB6-Nf-fyc" id="OWk-z9-56D"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggj-at-ODU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
