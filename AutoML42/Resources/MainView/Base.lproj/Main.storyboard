@@ -38,7 +38,7 @@
                                     <action selector="addImageButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJG-xd-mNF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpd-Ff-rqb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpd-Ff-rqb">
                                 <rect key="frame" x="179" y="603" width="56" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="과연?"/>
@@ -59,9 +59,9 @@
                                     <constraint firstAttribute="height" constant="40" id="Hjb-Q8-oKm"/>
                                     <constraint firstAttribute="width" constant="40" id="V9f-Ea-724"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <buttonConfiguration key="configuration" style="plain" buttonSize="large">
-                                    <backgroundConfiguration key="background" image="cube.box" catalog="system"/>
+                                    <backgroundConfiguration key="background" image="shippingbox" catalog="system"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="historyButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpK-a7-BDr"/>
@@ -88,6 +88,7 @@
                     <connections>
                         <outlet property="addImageButton" destination="pLY-ge-3J0" id="4dC-bs-IQV"/>
                         <outlet property="backgroundImageView" destination="ZW4-yk-XpR" id="HRK-cr-RJ6"/>
+                        <outlet property="detactButton" destination="xpd-Ff-rqb" id="n1I-Dz-GXi"/>
                         <outlet property="popupImageView" destination="Oma-Rz-Zk5" id="6AQ-ci-Zku"/>
                         <outlet property="titleLabel" destination="KTh-dZ-ie6" id="MQt-ix-inm"/>
                         <segue destination="MTV-tJ-ONV" kind="show" identifier="ShowHistorySegue" id="njM-f6-56s"/>
@@ -115,7 +116,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cube.box" catalog="system" width="128" height="124"/>
+        <image name="shippingbox" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

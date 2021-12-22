@@ -18,9 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var popupImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var resultsTextLabel: UILabel!
     @IBOutlet weak var addImageButton: UIButton!
-    
+    @IBOutlet weak var detactButton: UIButton!
     
     // MARK: - Properties
     
@@ -51,7 +50,7 @@ class ViewController: UIViewController {
     private func configure() {
         self.configureButton()
         self.configureImageView()
-        picker.delegate = self
+        self.picker.delegate = self
     }
     
     private func saveHistory() {
@@ -63,14 +62,14 @@ class ViewController: UIViewController {
     }
     
     private func openLibrary(){
-      picker.sourceType = .photoLibrary
-      present(picker, animated: false, completion: nil)
+        self.picker.sourceType = .photoLibrary
+        present(picker, animated: false, completion: nil)
     }
     
     private func openCamera(){
         if(UIImagePickerController .isSourceTypeAvailable(.camera)) {
-        picker.sourceType = .camera
-        present(picker, animated: false, completion: nil)
+            self.picker.sourceType = .camera
+            present(picker, animated: false, completion: nil)
         }
         else {
             print("Camera not available")
@@ -87,7 +86,7 @@ class ViewController: UIViewController {
     
     private func showResult(by check: Bool) {
         self.configurePopupImage(by: check)
-        popupImageView.fadeInOut()
+        self.popupImageView.fadeInOut()
     }
     
     private func showTextInputAlert(saveWithImage imageData: Data?, check: Bool) {
@@ -120,24 +119,27 @@ class ViewController: UIViewController {
     }
     
     private func configureButton() {
-        addImageButton.layer.cornerRadius = 0.5 * addImageButton.bounds.size.width
-        addImageButton.clipsToBounds = true
-        addImageButton.layer.borderWidth = 1.0
-        addImageButton.layer.borderColor = UIColor.white.cgColor
-        addImageButton.layer.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
-        addImageButton.titleLabel?.textColor = UIColor.white
+        self.addImageButton.layer.cornerRadius = 0.5 * addImageButton.bounds.size.width
+        self.addImageButton.clipsToBounds = true
+        self.addImageButton.layer.borderWidth = 1.0
+        self.addImageButton.layer.borderColor = UIColor.white.cgColor
+        self.addImageButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        self.addImageButton.titleLabel?.textColor = UIColor.white
+        
+        self.detactButton.layer.borderColor = UIColor.white.cgColor
+        self.detactButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
     }
     
     private func configureImageView() {
         let backgroundImage = UIImage(named: "background2.jpg")
         let popupImage = UIImage(named: "popup.png")
         
-        backgroundImageView.image = backgroundImage
-        backgroundImageView.contentMode = .scaleAspectFill
+        self.backgroundImageView.image = backgroundImage
+        self.backgroundImageView.contentMode = .scaleAspectFill
         
-        popupImageView.image = popupImage
-        popupImageView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
-        popupImageView.isHidden = true
+        self.popupImageView.image = popupImage
+        self.popupImageView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
+        self.popupImageView.isHidden = true
         
     }
 
@@ -150,10 +152,9 @@ class ViewController: UIViewController {
     @IBAction func detectButtonTabbed(_ sender: Any) {
         guard let image = backgroundImageView.image else { return }
         
+        // [START init_label]
         let options = ImageLabelerOptions()
         options.confidenceThreshold = 0.7
-        
-        // [START init_label]
         let onDeviceLabeler = ImageLabeler.imageLabeler(options: options)
         // [END init_label]
 
@@ -193,15 +194,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addImageButtonTabbed(_ sender: Any) {
-        let alert =  UIAlertController(title: "원하는 타이틀", message: "원하는 메세지", preferredStyle: .actionSheet)
+        let alert =  UIAlertController(title: "사진을 선택하세요", message: "분석할 이미지 설정", preferredStyle: .actionSheet)
         
         let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in
-            print("in library")
             self.openLibrary()
         }
 
         let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
-            print("in camera")
             self.openCamera()
         }
 
