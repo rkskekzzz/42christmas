@@ -39,9 +39,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpd-Ff-rqb">
-                                <rect key="frame" x="179" y="603" width="56" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="과연?"/>
+                                <rect key="frame" x="187" y="788" width="40" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="과연?"/>
                                 <connections>
                                     <action selector="detectButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aa0-we-5cS"/>
                                 </connections>
@@ -53,7 +53,7 @@
                                     <constraint firstAttribute="height" constant="200" id="wd1-7i-VQP"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkT-5V-9RT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkT-5V-9RT" userLabel="HistoryButton">
                                 <rect key="frame" x="354" y="64" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Hjb-Q8-oKm"/>
@@ -67,19 +67,36 @@
                                     <action selector="historyButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpK-a7-BDr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58i-az-A2G" userLabel="ClearButton">
+                                <rect key="frame" x="304" y="64" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aT8-NL-byd"/>
+                                    <constraint firstAttribute="width" constant="40" id="x6w-ey-oT9"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <backgroundConfiguration key="background" image="wand.and.stars" catalog="system"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="ClearButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mdk-fi-DZ4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="58i-az-A2G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="84g-xf-USC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xpd-Ff-rqb" secondAttribute="bottom" constant="40" id="8rH-Qt-qkA"/>
                             <constraint firstItem="lkT-5V-9RT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8yv-3S-LLD"/>
                             <constraint firstItem="Oma-Rz-Zk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RfJ-4W-7GH"/>
                             <constraint firstItem="ZW4-yk-XpR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TQZ-do-lSi"/>
                             <constraint firstItem="Oma-Rz-Zk5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W4Y-Wz-SzA"/>
-                            <constraint firstItem="xpd-Ff-rqb" firstAttribute="top" secondItem="pLY-ge-3J0" secondAttribute="bottom" constant="80" id="Xau-fE-eEe"/>
                             <constraint firstItem="pLY-ge-3J0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="d84-WO-nvc"/>
                             <constraint firstItem="pLY-ge-3J0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eb7-nd-Kw9"/>
                             <constraint firstItem="xpd-Ff-rqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gSf-QC-K3h"/>
                             <constraint firstAttribute="bottom" secondItem="ZW4-yk-XpR" secondAttribute="bottom" id="ieh-cR-sJm"/>
+                            <constraint firstItem="lkT-5V-9RT" firstAttribute="leading" secondItem="58i-az-A2G" secondAttribute="trailing" constant="10" id="j9Q-Ar-Aab"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lkT-5V-9RT" secondAttribute="trailing" constant="20" id="nJW-Z1-kBm"/>
                             <constraint firstItem="ZW4-yk-XpR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ppP-Lt-18g"/>
                             <constraint firstItem="ZW4-yk-XpR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zl9-NS-Ifa"/>
@@ -117,6 +134,7 @@
     </scenes>
     <resources>
         <image name="shippingbox" catalog="system" width="128" height="124"/>
+        <image name="wand.and.stars" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

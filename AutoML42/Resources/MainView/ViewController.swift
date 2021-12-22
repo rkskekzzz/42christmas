@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let picker = UIImagePickerController()
     
+    private var isClearButtonTabbed = false
     private var resultText: String = ""
     private var userID: String?
     
@@ -53,6 +54,54 @@ class ViewController: UIViewController {
         self.picker.delegate = self
     }
     
+    private func configureButton() {
+        self.addImageButton.layer.cornerRadius = 0.5 * addImageButton.bounds.size.width
+        self.addImageButton.clipsToBounds = true
+        self.addImageButton.layer.borderWidth = 1.0
+        self.addImageButton.layer.borderColor = UIColor.white.cgColor
+        self.addImageButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        self.addImageButton.titleLabel?.textColor = UIColor.white
+        
+        self.detactButton.layer.cornerRadius = 20
+        self.detactButton.clipsToBounds = true
+//        self.detactButton.layer.borderWidth = 1.0
+//        self.detactButton.layer.borderColor = UIColor.white.cgColor
+        self.detactButton.backgroundColor = UIColor.purple.withAlphaComponent(0.8)
+        self.detactButton.titleLabel?.text = "Start!"
+        NSLayoutConstraint.activate([
+            self.detactButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 40),
+            self.detactButton.widthAnchor.constraint(equalToConstant: 130),
+            self.detactButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    private func configureImageView() {
+        let backgroundImage = UIImage(named: "background2.jpg")
+        let popupImage = UIImage(named: "popup.png")
+        
+        self.backgroundImageView.image = backgroundImage
+        self.backgroundImageView.contentMode = .scaleAspectFill
+        
+        self.popupImageView.image = popupImage
+        self.popupImageView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
+        self.popupImageView.isHidden = true
+        
+    }
+    
+    private func showResult(by check: Bool) {
+        self.configurePopupImage(by: check)
+        self.popupImageView.fadeInOut()
+        self.detactButton.fadeOutIn()
+    }
+    
+    private func configurePopupImage(by check: Bool) {
+        if check {
+            self.popupImageView.image = UIImage(named: "success.png")
+        } else {
+            self.popupImageView.image = UIImage(named: "fail.png")
+        }
+    }
+    
     private func saveHistory() {
         do {
             try context.save()
@@ -75,20 +124,7 @@ class ViewController: UIViewController {
             print("Camera not available")
         }
     }
-    
-    private func configurePopupImage(by check: Bool) {
-        if check {
-            self.popupImageView.image = UIImage(named: "popup.png")
-        } else {
-            self.popupImageView.image = UIImage(named: "fail.png")
-        }
-    }
-    
-    private func showResult(by check: Bool) {
-        self.configurePopupImage(by: check)
-        self.popupImageView.fadeInOut()
-    }
-    
+
     private func showTextInputAlert(saveWithImage imageData: Data?, check: Bool) {
         guard let imageData = imageData else { return }
         let alert = UIAlertController(title: "intra ID를 입력해 주세요!", message: "", preferredStyle: .alert)
@@ -118,30 +154,7 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    private func configureButton() {
-        self.addImageButton.layer.cornerRadius = 0.5 * addImageButton.bounds.size.width
-        self.addImageButton.clipsToBounds = true
-        self.addImageButton.layer.borderWidth = 1.0
-        self.addImageButton.layer.borderColor = UIColor.white.cgColor
-        self.addImageButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
-        self.addImageButton.titleLabel?.textColor = UIColor.white
-        
-        self.detactButton.layer.borderColor = UIColor.white.cgColor
-        self.detactButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
-    }
-    
-    private func configureImageView() {
-        let backgroundImage = UIImage(named: "background2.jpg")
-        let popupImage = UIImage(named: "popup.png")
-        
-        self.backgroundImageView.image = backgroundImage
-        self.backgroundImageView.contentMode = .scaleAspectFill
-        
-        self.popupImageView.image = popupImage
-        self.popupImageView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
-        self.popupImageView.isHidden = true
-        
-    }
+ 
 
     // MARK: - IBActions
 
@@ -193,6 +206,15 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func ClearButtonTabbed(_ sender: Any) {
+        isClearButtonTabbed.toggle()
+        
+        let isHidden = isClearButtonTabbed
+        
+        self.addImageButton.isHidden = isHidden
+        self.detactButton.isHidden = isHidden
+    }
+    
     @IBAction func addImageButtonTabbed(_ sender: Any) {
         let alert =  UIAlertController(title: "사진을 선택하세요", message: "분석할 이미지 설정", preferredStyle: .actionSheet)
         
@@ -232,13 +254,25 @@ extension UIView {
     func fadeInOut() {
         self.alpha = 0
         self.isHidden = false
-        UIView.animate(withDuration: 3) { [weak self] in
+        UIView.animate(withDuration: 2) { [weak self] in
             self?.alpha = 1
         } completion: { [weak self] (isFinish) in
-            UIView.animate(withDuration: 3, animations: {
+            UIView.animate(withDuration: 2, animations: {
                 self?.alpha = 0
             }, completion: { (isFisish) in
                 self?.isHidden = true
+            })
+        }
+    }
+    
+    func fadeOutIn() {
+        self.alpha = 1
+        UIView.animate(withDuration: 2) { [weak self] in
+            self?.alpha = 0
+        } completion: { [weak self] (isFinish) in
+            UIView.animate(withDuration: 2, animations: {
+                self?.alpha = 1
+            }, completion: { (isFisish) in
             })
         }
     }
