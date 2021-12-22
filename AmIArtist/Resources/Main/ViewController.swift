@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var detactButton: UIButton!
-    
+    @IBOutlet weak var clearButton: UIButton!
     // MARK: - Properties
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -60,7 +60,10 @@ class ViewController: UIViewController {
         self.addImageButton.layer.borderWidth = 1.0
         self.addImageButton.layer.borderColor = UIColor.white.cgColor
         self.addImageButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
-        self.addImageButton.titleLabel?.textColor = UIColor.white
+        self.addImageButton.setTitle("이미지 추가", for: .normal)
+        self.addImageButton.setTitleColor(UIColor.white, for: .normal)
+        
+        self.clearButton.backgroundColor = UIColor.white.withAlphaComponent(0.7)
         
         self.detactButton.layer.cornerRadius = 20
         self.detactButton.clipsToBounds = true

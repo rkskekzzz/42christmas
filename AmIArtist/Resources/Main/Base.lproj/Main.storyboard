@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutoML42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AmIArtist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,8 +32,8 @@
                                     <constraint firstAttribute="height" constant="150" id="8bM-YZ-ojn"/>
                                     <constraint firstAttribute="width" constant="150" id="qdn-Vp-58d"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add Image"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Add Image"/>
                                 <connections>
                                     <action selector="addImageButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJG-xd-mNF"/>
                                 </connections>
@@ -67,8 +67,8 @@
                                     <action selector="historyButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpK-a7-BDr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58i-az-A2G" userLabel="ClearButton">
-                                <rect key="frame" x="304" y="64" width="40" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58i-az-A2G" userLabel="ClearButton">
+                                <rect key="frame" x="304" y="62" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="aT8-NL-byd"/>
                                     <constraint firstAttribute="width" constant="40" id="x6w-ey-oT9"/>
@@ -105,6 +105,7 @@
                     <connections>
                         <outlet property="addImageButton" destination="pLY-ge-3J0" id="4dC-bs-IQV"/>
                         <outlet property="backgroundImageView" destination="ZW4-yk-XpR" id="HRK-cr-RJ6"/>
+                        <outlet property="clearButton" destination="58i-az-A2G" id="sed-eB-opz"/>
                         <outlet property="detactButton" destination="xpd-Ff-rqb" id="n1I-Dz-GXi"/>
                         <outlet property="popupImageView" destination="Oma-Rz-Zk5" id="6AQ-ci-Zku"/>
                         <outlet property="titleLabel" destination="KTh-dZ-ie6" id="MQt-ix-inm"/>
@@ -118,7 +119,7 @@
         <!--History View Controller-->
         <scene sceneID="CHd-9P-Sga">
             <objects>
-                <viewController id="MTV-tJ-ONV" customClass="HistoryViewController" customModule="AutoML42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MTV-tJ-ONV" customClass="HistoryViewController" customModule="AmIArtist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ss-LU-dO5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
