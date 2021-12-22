@@ -30,6 +30,7 @@
 		9034BC39276CFCF8009A6545 /* AutoML42Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC38276CFCF8009A6545 /* AutoML42Tests.swift */; };
 		9034BC43276CFCF8009A6545 /* AutoML42UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC42276CFCF8009A6545 /* AutoML42UITests.swift */; };
 		9034BC45276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */; };
+		906277EE2773B72D00CC3562 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 906277ED2773B72D00CC3562 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		9034BC3E276CFCF8009A6545 /* AmIArtistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmIArtistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9034BC42276CFCF8009A6545 /* AutoML42UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoML42UITests.swift; sourceTree = "<group>"; };
 		9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoML42UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		906277ED2773B72D00CC3562 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9D0BA6BC9EA42F43E8D759A2 /* Pods-AmIArtist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmIArtist.release.xcconfig"; path = "Target Support Files/Pods-AmIArtist/Pods-AmIArtist.release.xcconfig"; sourceTree = "<group>"; };
 		A15D7DD8D65BFCFBBC90CE6F /* Pods-AutoML42.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42.debug.xcconfig"; path = "Target Support Files/Pods-AutoML42/Pods-AutoML42.debug.xcconfig"; sourceTree = "<group>"; };
 		A80E971F8491F939BA3DB7D3 /* Pods_AmIArtist_AmIArtistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmIArtist_AmIArtistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +203,7 @@
 		9034BC15276CFCF6009A6545 = {
 			isa = PBXGroup;
 			children = (
+				906277ED2773B72D00CC3562 /* .swiftlint.yml */,
 				900BE38C276FB2B300D04E8E /* Resources */,
 				9034BC20276CFCF7009A6545 /* AmIArtist */,
 				9034BC37276CFCF8009A6545 /* AmIArtistTests */,
@@ -281,6 +284,7 @@
 				9034BC1C276CFCF7009A6545 /* Resources */,
 				8A715413B7BEBE81FC7F87D9 /* [CP] Embed Pods Frameworks */,
 				3304C85057AB696E85F9E8F4 /* [CP] Copy Pods Resources */,
+				906277EA2773B42A00CC3562 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -379,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906277EE2773B72D00CC3562 /* .swiftlint.yml in Resources */,
 				9034BC2E276CFCF8009A6545 /* LaunchScreen.storyboard in Resources */,
 				900BE3F02773033700D04E8E /* success.png in Resources */,
 				900BE3922770B1C600D04E8E /* background.jpg in Resources */,
@@ -497,6 +502,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AmIArtist/Pods-AmIArtist-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		906277EA2773B42A00CC3562 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		D245221E914799230903C994 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

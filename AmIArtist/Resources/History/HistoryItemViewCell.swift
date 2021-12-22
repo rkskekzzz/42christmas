@@ -30,7 +30,9 @@ class HistoryItemViewCell: UICollectionViewCell {
         self.configure()
     }
     
-    func update(with image: UIImage, userID: String, check: Bool) {
+    func update(with image: UIImage?, userID: String?, check: Bool) {
+        guard let image = image, let userID = userID else { return }
+        
         self.itemImage.image = image
         self.itmeUserID.text = userID
         if !check {

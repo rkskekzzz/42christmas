@@ -15,7 +15,7 @@ class HistoryViewController: UIViewController {
 
     // MARK: - Properties
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     private var layout: UICollectionViewFlowLayout {
         let width = (view.frame.width )/3
         let layout = UICollectionViewFlowLayout()
@@ -26,7 +26,6 @@ class HistoryViewController: UIViewController {
         return layout
     }
     var histories = [History]()
-    
     
     // MARK: - UIViewController
     
@@ -58,11 +57,13 @@ class HistoryViewController: UIViewController {
             self.historyCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.historyCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.historyCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.historyCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.historyCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
     
     private func readHistory() {
+        guard let context = context else { return }
+        
         let request: NSFetchRequest<History> = History.fetchRequest()
         do {
             histories = try context.fetch(request)
@@ -89,9 +90,8 @@ extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDel
             return UICollectionViewCell()
         }
         
-        let image = UIImage(data: imageData)!
-        
-        let id = histories[histories.count - indexPath.row - 1].intraID!
+        let image = UIImage(data: imageData)
+        let id = histories[histories.count - indexPath.row - 1].intraID
         let check = histories[histories.count - indexPath.row - 1].check
         
         cell.update(with: image, userID: id, check: check)

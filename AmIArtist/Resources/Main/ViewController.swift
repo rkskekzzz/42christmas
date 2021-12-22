@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     let picker = UIImagePickerController()
     
     private var isClearButtonTabbed = false
@@ -41,8 +41,8 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Self.showHistorySegueIdentifier,
-           let _ = segue.destination as? HistoryViewController,
-            let _ = userID {
+           segue.destination as? HistoryViewController != nil,
+           userID != nil {
 //            destination.configure() {
                 print("\n\nview is changed!\n\n")
 //            }
@@ -112,6 +112,8 @@ class ViewController: UIViewController {
     }
     
     private func saveHistory() {
+        guard let context = context else { return }
+        
         do {
             try context.save()
         } catch {
@@ -125,11 +127,10 @@ class ViewController: UIViewController {
     }
     
     private func openCamera(){
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)) {
+        if UIImagePickerController .isSourceTypeAvailable(.camera) {
             self.picker.sourceType = .camera
             present(picker, animated: false, completion: nil)
-        }
-        else {
+        } else {
             print("Camera not available")
         }
     }
@@ -139,11 +140,12 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "intra ID를 입력해 주세요!", message: "", preferredStyle: .alert)
         
         weak var weakSelf = self
-        let ok = UIAlertAction(title: "OK", style: .default) { (ok) in
+        let okButton = UIAlertAction(title: "OK", style: .default) { _ in
             guard let strongSelf = weakSelf else { return }
+            guard let context = strongSelf.context else { return }
             guard let textFields = alert.textFields else { return }
             
-            let history = History(context: strongSelf.context)
+            let history = History(context: context)
             
             history.id = UUID()
             history.image = imageData
@@ -155,12 +157,10 @@ class ViewController: UIViewController {
         }
         
         alert.addTextField()
-        alert.addAction(ok)
+        alert.addAction(okButton)
         
         self.present(alert, animated: true, completion: nil)
     }
-    
- 
 
     // MARK: - IBActions
 
@@ -212,7 +212,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func ClearButtonTabbed(_ sender: Any) {
+    @IBAction func clearButtonTabbed(_ sender: Any) {
         isClearButtonTabbed.toggle()
         
         let isHidden = isClearButtonTabbed
@@ -224,11 +224,11 @@ class ViewController: UIViewController {
     @IBAction func addImageButtonTabbed(_ sender: Any) {
         let alert =  UIAlertController(title: "사진을 선택하세요", message: "분석할 이미지 설정", preferredStyle: .actionSheet)
         
-        let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in
+        let library =  UIAlertAction(title: "사진앨범", style: .default) { _ in
             self.openLibrary()
         }
 
-        let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
+        let camera =  UIAlertAction(title: "카메라", style: .default) { _ in
             self.openCamera()
         }
 
@@ -242,10 +242,10 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: - UIImagePickerControllerDelegate
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             print(image)
             backgroundImageView.image = image
@@ -262,10 +262,10 @@ extension UIView {
         self.isHidden = false
         UIView.animate(withDuration: 2) { [weak self] in
             self?.alpha = 1
-        } completion: { [weak self] (isFinish) in
+        } completion: { [weak self] _ in
             UIView.animate(withDuration: 2, animations: {
                 self?.alpha = 0
-            }, completion: { (isFisish) in
+            }, completion: { _ in
                 self?.isHidden = true
             })
         }
@@ -275,14 +275,11 @@ extension UIView {
         self.alpha = 1
         UIView.animate(withDuration: 2) { [weak self] in
             self?.alpha = 0
-        } completion: { [weak self] (isFinish) in
+        } completion: { [weak self] _ in
             UIView.animate(withDuration: 2, animations: {
                 self?.alpha = 1
-            }, completion: { (isFisish) in
+            }, completion: { _ in
             })
         }
     }
 }
-
-
-
