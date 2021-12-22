@@ -145,10 +145,7 @@ class ViewController: UIViewController {
             strongSelf.showResult(by: check)
         }
         
-        alert.addTextField { textField in
-            textField.textColor = .black
-        }
-        
+        alert.addTextField()
         alert.addAction(ok)
         
         self.present(alert, animated: true, completion: nil)
@@ -196,7 +193,7 @@ class ViewController: UIViewController {
 //              return "Label: \(label.text), Confidence: \(label.confidence), Index: \(label.index)"
 //            }.joined(separator: "\n")
 
-            //            strongSelf.showResult()
+//            strongSelf.showResult()
             
             let imageData = image.jpegData(compressionQuality: 1.0)
             let check  = labels[0].text == "Christmas" ? true : false

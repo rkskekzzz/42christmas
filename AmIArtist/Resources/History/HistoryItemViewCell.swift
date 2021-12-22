@@ -41,6 +41,8 @@ class HistoryItemViewCell: UICollectionViewCell {
     private func configure() {
         self.addSubview(self.itemImage)
         self.itemImage.translatesAutoresizingMaskIntoConstraints = false
+        self.itemImage.contentMode = .scaleAspectFill
+        self.itemImage.clipsToBounds = true
         NSLayoutConstraint.activate([
             self.itemImage.topAnchor.constraint(equalTo: self.topAnchor),
             self.itemImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),

@@ -153,21 +153,21 @@
 		900BE3992770D0DC00D04E8E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				900BE3ED2772FB6A00D04E8E /* MainView */,
-				900BE39B2770D11200D04E8E /* HistoryView */,
+				900BE3ED2772FB6A00D04E8E /* Main */,
+				900BE39B2770D11200D04E8E /* History */,
 				900BE3EE2772FBFE00D04E8E /* CustomUIView */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		900BE39B2770D11200D04E8E /* HistoryView */ = {
+		900BE39B2770D11200D04E8E /* History */ = {
 			isa = PBXGroup;
 			children = (
 				900BE3E42771BCF400D04E8E /* HistoryItemViewCell.swift */,
 				900BE3E6277202D800D04E8E /* HistoryCollectionView.swift */,
 				900BE3E02770F04A00D04E8E /* HistoryViewController.swift */,
 			);
-			path = HistoryView;
+			path = History;
 			sourceTree = "<group>";
 		};
 		900BE3EC2772FACF00D04E8E /* Application */ = {
@@ -181,13 +181,13 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		900BE3ED2772FB6A00D04E8E /* MainView */ = {
+		900BE3ED2772FB6A00D04E8E /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				9034BC27276CFCF7009A6545 /* Main.storyboard */,
 				9034BC25276CFCF7009A6545 /* ViewController.swift */,
 			);
-			path = MainView;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		900BE3EE2772FBFE00D04E8E /* CustomUIView */ = {

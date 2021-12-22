@@ -85,7 +85,7 @@ extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDel
                     return UICollectionViewCell()
         }
         
-        guard let imageData = histories[indexPath.row].image else {
+        guard let imageData = histories[histories.count - indexPath.row - 1].image else {
             return UICollectionViewCell()
         }
         
