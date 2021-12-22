@@ -131,7 +131,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		900BE38C276FB2B300D04E8E /* Resources */ = {
+		900BE38C276FB2B300D04E8E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				900BE38F277071B500D04E8E /* test.png */,
@@ -141,7 +141,7 @@
 				900BE3EA2772F86500D04E8E /* fail.png */,
 				900BE3EF2773033700D04E8E /* success.png */,
 			);
-			path = Resources;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		900BE3982770D0D400D04E8E /* Data */ = {
@@ -152,14 +152,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		900BE3992770D0DC00D04E8E /* Resources */ = {
+		900BE3992770D0DC00D04E8E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				900BE3ED2772FB6A00D04E8E /* Main */,
 				900BE39B2770D11200D04E8E /* History */,
 				900BE3EE2772FBFE00D04E8E /* CustomUIView */,
 			);
-			path = Resources;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		900BE39B2770D11200D04E8E /* History */ = {
@@ -204,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				906277ED2773B72D00CC3562 /* .swiftlint.yml */,
-				900BE38C276FB2B300D04E8E /* Resources */,
 				9034BC20276CFCF7009A6545 /* AmIArtist */,
 				9034BC37276CFCF8009A6545 /* AmIArtistTests */,
 				9034BC41276CFCF8009A6545 /* AmIArtistUITests */,
@@ -228,7 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				900BE3982770D0D400D04E8E /* Data */,
-				900BE3992770D0DC00D04E8E /* Resources */,
+				900BE38C276FB2B300D04E8E /* Resource */,
+				900BE3992770D0DC00D04E8E /* Presentation */,
 				900BE3EC2772FACF00D04E8E /* Application */,
 				9034BC2F276CFCF8009A6545 /* Info.plist */,
 			);
