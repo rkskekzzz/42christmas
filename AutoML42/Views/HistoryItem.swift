@@ -14,6 +14,7 @@ class HistoryItem: UICollectionViewCell {
         let label = PaddingLabel()
         label.layer.cornerRadius =  10
         label.clipsToBounds = true
+        label.font.withSize(0.7)
         label.backgroundColor = UIColor.green.withAlphaComponent(0.7)
         label.textColor = UIColor.white
         return label

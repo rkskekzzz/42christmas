@@ -134,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				900BE3DD2770DB4D00D04E8E /* DataModel.xcdatamodeld */,
-				900BE3E42771BCF400D04E8E /* HistoryItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,6 +144,7 @@
 				9034BC27276CFCF7009A6545 /* Main.storyboard */,
 				900BE3E6277202D800D04E8E /* HistoryCollectionView.swift */,
 				900BE3E8277216C700D04E8E /* PaddingLabel.swift */,
+				900BE3E42771BCF400D04E8E /* HistoryItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
