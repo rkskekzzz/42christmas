@@ -77,7 +77,16 @@ class ViewController: UIViewController {
         }
     }
     
-    private func showResult() {
+    private func configurePopupImage(by check: Bool) {
+        if check {
+            self.popupImageView.image = UIImage(named: "popup.png")
+        } else {
+            self.popupImageView.image = UIImage(named: "fail.png")
+        }
+    }
+    
+    private func showResult(by check: Bool) {
+        self.configurePopupImage(by: check)
         popupImageView.fadeInOut()
     }
     
@@ -98,7 +107,7 @@ class ViewController: UIViewController {
             history.check = check
             
             strongSelf.saveHistory()
-            strongSelf.showResult()
+            strongSelf.showResult(by: check)
         }
         
         alert.addTextField { textField in
@@ -160,9 +169,9 @@ class ViewController: UIViewController {
             }
             guard error == nil, let labels = labels, !labels.isEmpty else {
               // [START_EXCLUDE]
-              let errorString = error?.localizedDescription ?? "test message"
+              let errorString = error?.localizedDescription ?? "localizedDescription Failed!"
                 strongSelf.resultText = "On-Device label detection failed with error: \(errorString)"
-                strongSelf.showResult()
+                print(strongSelf.resultText)
               // [END_EXCLUDE]
               return
             }
@@ -177,10 +186,6 @@ class ViewController: UIViewController {
             
             let imageData = image.jpegData(compressionQuality: 1.0)
             let check  = labels[0].text == "Christmas" ? true : false
-            
-            print("-------------------")
-            print(labels[0].text)
-            print("-------------------")
             
             strongSelf.showTextInputAlert(saveWithImage: imageData, check: check)
         }

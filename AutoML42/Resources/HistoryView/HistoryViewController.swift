@@ -53,7 +53,7 @@ class HistoryViewController: UIViewController {
         self.historyCollectionView.translatesAutoresizingMaskIntoConstraints = false
         self.historyCollectionView.delegate = self
         self.historyCollectionView.dataSource = self
-        self.historyCollectionView.register(HistoryItem.self, forCellWithReuseIdentifier: HistoryItem.identifier)
+        self.historyCollectionView.register(HistoryItemViewCell.self, forCellWithReuseIdentifier: HistoryItemViewCell.identifier)
         NSLayoutConstraint.activate([
             self.historyCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.historyCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -81,7 +81,7 @@ extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistoryItemCell", for: indexPath) as? HistoryItem else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistoryItemCell", for: indexPath) as? HistoryItemViewCell else {
                     return UICollectionViewCell()
         }
         
@@ -90,11 +90,16 @@ extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         
         let image = UIImage(data: imageData)!
-        let id = histories[indexPath.row].intraID!
-        let check = histories[indexPath.row].check
+        
+        let id = histories[histories.count - indexPath.row - 1].intraID!
+        let check = histories[histories.count - indexPath.row - 1].check
         
         cell.update(with: image, userID: id, check: check)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("tabbed!")
     }
 }
