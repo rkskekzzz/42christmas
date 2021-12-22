@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00BAA075F6E7078AC427DD8B /* Pods_AutoML42Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F7AA7868731102617A1245 /* Pods_AutoML42Tests.framework */; };
-		5860218681E770961DADFDAE /* Pods_AutoML42_AutoML42UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEE463B344E3E55E0441F7B /* Pods_AutoML42_AutoML42UITests.framework */; };
+		1BC6B5ADFB9AE790BFA163CA /* Pods_AmIArtist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C377CA222D0782E82ED44C9E /* Pods_AmIArtist.framework */; };
+		3270FC99092BBA08ADE312BE /* Pods_AmIArtistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC82D8DA9A2165A4E20CCCCE /* Pods_AmIArtistTests.framework */; };
+		56DCBB0AE4CA5AF87B929DE3 /* Pods_AmIArtist_AmIArtistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80E971F8491F939BA3DB7D3 /* Pods_AmIArtist_AmIArtistUITests.framework */; };
 		900BE390277071B500D04E8E /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 900BE38F277071B500D04E8E /* test.png */; };
 		900BE3922770B1C600D04E8E /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 900BE3912770B1C600D04E8E /* background.jpg */; };
 		900BE3942770B45200D04E8E /* background2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 900BE3932770B45200D04E8E /* background2.jpg */; };
@@ -29,7 +30,6 @@
 		9034BC39276CFCF8009A6545 /* AutoML42Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC38276CFCF8009A6545 /* AutoML42Tests.swift */; };
 		9034BC43276CFCF8009A6545 /* AutoML42UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC42276CFCF8009A6545 /* AutoML42UITests.swift */; };
 		9034BC45276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */; };
-		EE48E8802CEAB6D21B363EF4 /* Pods_AutoML42.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7230F1AB580E81F188BCDAB0 /* Pods_AutoML42.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		077D7848F4129A9C5029648B /* Pods-AmIArtistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmIArtistTests.release.xcconfig"; path = "Target Support Files/Pods-AmIArtistTests/Pods-AmIArtistTests.release.xcconfig"; sourceTree = "<group>"; };
 		0BA032E15C98B9DBE341F550 /* Pods-AutoML42-AutoML42UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42-AutoML42UITests.debug.xcconfig"; path = "Target Support Files/Pods-AutoML42-AutoML42UITests/Pods-AutoML42-AutoML42UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1AC3B85712EDADD795C536C9 /* Pods-AutoML42-AutoML42UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42-AutoML42UITests.release.xcconfig"; path = "Target Support Files/Pods-AutoML42-AutoML42UITests/Pods-AutoML42-AutoML42UITests.release.xcconfig"; sourceTree = "<group>"; };
+		1C205B977B830E1F063CBEF4 /* Pods-AmIArtistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmIArtistTests.debug.xcconfig"; path = "Target Support Files/Pods-AmIArtistTests/Pods-AmIArtistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E9D2C1C71A9F949CFAEBFD5 /* Pods-AmIArtist-AmIArtistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmIArtist-AmIArtistUITests.release.xcconfig"; path = "Target Support Files/Pods-AmIArtist-AmIArtistUITests/Pods-AmIArtist-AmIArtistUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4EB69187D5E21B9D127F7B7F /* Pods-AutoML42Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42Tests.release.xcconfig"; path = "Target Support Files/Pods-AutoML42Tests/Pods-AutoML42Tests.release.xcconfig"; sourceTree = "<group>"; };
-		7230F1AB580E81F188BCDAB0 /* Pods_AutoML42.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoML42.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D47A6F3548C8EB2E969E210 /* Pods-AmIArtist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmIArtist.debug.xcconfig"; path = "Target Support Files/Pods-AmIArtist/Pods-AmIArtist.debug.xcconfig"; sourceTree = "<group>"; };
+		81C2C23C69AA3D3116896EF7 /* Pods-AmIArtist-AmIArtistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmIArtist-AmIArtistUITests.debug.xcconfig"; path = "Target Support Files/Pods-AmIArtist-AmIArtistUITests/Pods-AmIArtist-AmIArtistUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		900BE38F277071B500D04E8E /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		900BE3912770B1C600D04E8E /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		900BE3932770B45200D04E8E /* background2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background2.jpg; sourceTree = "<group>"; };
@@ -65,7 +69,7 @@
 		900BE3E8277216C700D04E8E /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		900BE3EA2772F86500D04E8E /* fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fail.png; sourceTree = "<group>"; };
 		900BE3EF2773033700D04E8E /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success.png; sourceTree = "<group>"; };
-		9034BC1E276CFCF7009A6545 /* AutoML42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoML42.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9034BC1E276CFCF7009A6545 /* AmIArtist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmIArtist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9034BC21276CFCF7009A6545 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9034BC23276CFCF7009A6545 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9034BC25276CFCF7009A6545 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,16 +77,18 @@
 		9034BC2A276CFCF8009A6545 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9034BC2D276CFCF8009A6545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9034BC2F276CFCF8009A6545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9034BC34276CFCF8009A6545 /* AutoML42Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoML42Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9034BC34276CFCF8009A6545 /* AmIArtistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmIArtistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9034BC38276CFCF8009A6545 /* AutoML42Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoML42Tests.swift; sourceTree = "<group>"; };
-		9034BC3E276CFCF8009A6545 /* AutoML42UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoML42UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9034BC3E276CFCF8009A6545 /* AmIArtistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmIArtistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9034BC42276CFCF8009A6545 /* AutoML42UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoML42UITests.swift; sourceTree = "<group>"; };
 		9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoML42UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		91F7AA7868731102617A1245 /* Pods_AutoML42Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoML42Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0BA6BC9EA42F43E8D759A2 /* Pods-AmIArtist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmIArtist.release.xcconfig"; path = "Target Support Files/Pods-AmIArtist/Pods-AmIArtist.release.xcconfig"; sourceTree = "<group>"; };
 		A15D7DD8D65BFCFBBC90CE6F /* Pods-AutoML42.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42.debug.xcconfig"; path = "Target Support Files/Pods-AutoML42/Pods-AutoML42.debug.xcconfig"; sourceTree = "<group>"; };
-		AEEE463B344E3E55E0441F7B /* Pods_AutoML42_AutoML42UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoML42_AutoML42UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80E971F8491F939BA3DB7D3 /* Pods_AmIArtist_AmIArtistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmIArtist_AmIArtistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30B9E2F2F84AB2FAB9ABF6C /* Pods-AutoML42.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42.release.xcconfig"; path = "Target Support Files/Pods-AutoML42/Pods-AutoML42.release.xcconfig"; sourceTree = "<group>"; };
+		C377CA222D0782E82ED44C9E /* Pods_AmIArtist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmIArtist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB696E60CACFB2C634F9BD7 /* Pods-AutoML42Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42Tests.debug.xcconfig"; path = "Target Support Files/Pods-AutoML42Tests/Pods-AutoML42Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FC82D8DA9A2165A4E20CCCCE /* Pods_AmIArtistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmIArtistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE48E8802CEAB6D21B363EF4 /* Pods_AutoML42.framework in Frameworks */,
+				1BC6B5ADFB9AE790BFA163CA /* Pods_AmIArtist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00BAA075F6E7078AC427DD8B /* Pods_AutoML42Tests.framework in Frameworks */,
+				3270FC99092BBA08ADE312BE /* Pods_AmIArtistTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5860218681E770961DADFDAE /* Pods_AutoML42_AutoML42UITests.framework in Frameworks */,
+				56DCBB0AE4CA5AF87B929DE3 /* Pods_AmIArtist_AmIArtistUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,9 +122,9 @@
 		352E2E256FC9C06E0E354B18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7230F1AB580E81F188BCDAB0 /* Pods_AutoML42.framework */,
-				AEEE463B344E3E55E0441F7B /* Pods_AutoML42_AutoML42UITests.framework */,
-				91F7AA7868731102617A1245 /* Pods_AutoML42Tests.framework */,
+				C377CA222D0782E82ED44C9E /* Pods_AmIArtist.framework */,
+				A80E971F8491F939BA3DB7D3 /* Pods_AmIArtist_AmIArtistUITests.framework */,
+				FC82D8DA9A2165A4E20CCCCE /* Pods_AmIArtistTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -196,9 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				900BE38C276FB2B300D04E8E /* Resources */,
-				9034BC20276CFCF7009A6545 /* AutoML42 */,
-				9034BC37276CFCF8009A6545 /* AutoML42Tests */,
-				9034BC41276CFCF8009A6545 /* AutoML42UITests */,
+				9034BC20276CFCF7009A6545 /* AmIArtist */,
+				9034BC37276CFCF8009A6545 /* AmIArtistTests */,
+				9034BC41276CFCF8009A6545 /* AmIArtistUITests */,
 				9034BC1F276CFCF7009A6545 /* Products */,
 				E5C549E60DBC67C9CF70E457 /* Pods */,
 				352E2E256FC9C06E0E354B18 /* Frameworks */,
@@ -208,14 +214,14 @@
 		9034BC1F276CFCF7009A6545 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9034BC1E276CFCF7009A6545 /* AutoML42.app */,
-				9034BC34276CFCF8009A6545 /* AutoML42Tests.xctest */,
-				9034BC3E276CFCF8009A6545 /* AutoML42UITests.xctest */,
+				9034BC1E276CFCF7009A6545 /* AmIArtist.app */,
+				9034BC34276CFCF8009A6545 /* AmIArtistTests.xctest */,
+				9034BC3E276CFCF8009A6545 /* AmIArtistUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9034BC20276CFCF7009A6545 /* AutoML42 */ = {
+		9034BC20276CFCF7009A6545 /* AmIArtist */ = {
 			isa = PBXGroup;
 			children = (
 				900BE3982770D0D400D04E8E /* Data */,
@@ -223,24 +229,24 @@
 				900BE3EC2772FACF00D04E8E /* Application */,
 				9034BC2F276CFCF8009A6545 /* Info.plist */,
 			);
-			path = AutoML42;
+			path = AmIArtist;
 			sourceTree = "<group>";
 		};
-		9034BC37276CFCF8009A6545 /* AutoML42Tests */ = {
+		9034BC37276CFCF8009A6545 /* AmIArtistTests */ = {
 			isa = PBXGroup;
 			children = (
 				9034BC38276CFCF8009A6545 /* AutoML42Tests.swift */,
 			);
-			path = AutoML42Tests;
+			path = AmIArtistTests;
 			sourceTree = "<group>";
 		};
-		9034BC41276CFCF8009A6545 /* AutoML42UITests */ = {
+		9034BC41276CFCF8009A6545 /* AmIArtistUITests */ = {
 			isa = PBXGroup;
 			children = (
 				9034BC42276CFCF8009A6545 /* AutoML42UITests.swift */,
 				9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */,
 			);
-			path = AutoML42UITests;
+			path = AmIArtistUITests;
 			sourceTree = "<group>";
 		};
 		E5C549E60DBC67C9CF70E457 /* Pods */ = {
@@ -252,6 +258,12 @@
 				1AC3B85712EDADD795C536C9 /* Pods-AutoML42-AutoML42UITests.release.xcconfig */,
 				EFB696E60CACFB2C634F9BD7 /* Pods-AutoML42Tests.debug.xcconfig */,
 				4EB69187D5E21B9D127F7B7F /* Pods-AutoML42Tests.release.xcconfig */,
+				7D47A6F3548C8EB2E969E210 /* Pods-AmIArtist.debug.xcconfig */,
+				9D0BA6BC9EA42F43E8D759A2 /* Pods-AmIArtist.release.xcconfig */,
+				81C2C23C69AA3D3116896EF7 /* Pods-AmIArtist-AmIArtistUITests.debug.xcconfig */,
+				4E9D2C1C71A9F949CFAEBFD5 /* Pods-AmIArtist-AmIArtistUITests.release.xcconfig */,
+				1C205B977B830E1F063CBEF4 /* Pods-AmIArtistTests.debug.xcconfig */,
+				077D7848F4129A9C5029648B /* Pods-AmIArtistTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -259,9 +271,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9034BC1D276CFCF7009A6545 /* AutoML42 */ = {
+		9034BC1D276CFCF7009A6545 /* AmIArtist */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9034BC48276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AutoML42" */;
+			buildConfigurationList = 9034BC48276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AmIArtist" */;
 			buildPhases = (
 				E54679AB2369C09FDAF14CCB /* [CP] Check Pods Manifest.lock */,
 				9034BC1A276CFCF7009A6545 /* Sources */,
@@ -274,14 +286,14 @@
 			);
 			dependencies = (
 			);
-			name = AutoML42;
+			name = AmIArtist;
 			productName = AutoML42;
-			productReference = 9034BC1E276CFCF7009A6545 /* AutoML42.app */;
+			productReference = 9034BC1E276CFCF7009A6545 /* AmIArtist.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9034BC33276CFCF8009A6545 /* AutoML42Tests */ = {
+		9034BC33276CFCF8009A6545 /* AmIArtistTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9034BC4B276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AutoML42Tests" */;
+			buildConfigurationList = 9034BC4B276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AmIArtistTests" */;
 			buildPhases = (
 				48ED5D8D6F52AE40BB1D7523 /* [CP] Check Pods Manifest.lock */,
 				9034BC30276CFCF8009A6545 /* Sources */,
@@ -293,14 +305,14 @@
 			dependencies = (
 				9034BC36276CFCF8009A6545 /* PBXTargetDependency */,
 			);
-			name = AutoML42Tests;
+			name = AmIArtistTests;
 			productName = AutoML42Tests;
-			productReference = 9034BC34276CFCF8009A6545 /* AutoML42Tests.xctest */;
+			productReference = 9034BC34276CFCF8009A6545 /* AmIArtistTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9034BC3D276CFCF8009A6545 /* AutoML42UITests */ = {
+		9034BC3D276CFCF8009A6545 /* AmIArtistUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9034BC4E276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AutoML42UITests" */;
+			buildConfigurationList = 9034BC4E276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AmIArtistUITests" */;
 			buildPhases = (
 				D245221E914799230903C994 /* [CP] Check Pods Manifest.lock */,
 				9034BC3A276CFCF8009A6545 /* Sources */,
@@ -314,9 +326,9 @@
 			dependencies = (
 				9034BC40276CFCF8009A6545 /* PBXTargetDependency */,
 			);
-			name = AutoML42UITests;
+			name = AmIArtistUITests;
 			productName = AutoML42UITests;
-			productReference = 9034BC3E276CFCF8009A6545 /* AutoML42UITests.xctest */;
+			productReference = 9034BC3E276CFCF8009A6545 /* AmIArtistUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -342,7 +354,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9034BC19276CFCF6009A6545 /* Build configuration list for PBXProject "AutoML42" */;
+			buildConfigurationList = 9034BC19276CFCF6009A6545 /* Build configuration list for PBXProject "AmIArtist" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -355,9 +367,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9034BC1D276CFCF7009A6545 /* AutoML42 */,
-				9034BC33276CFCF8009A6545 /* AutoML42Tests */,
-				9034BC3D276CFCF8009A6545 /* AutoML42UITests */,
+				9034BC1D276CFCF7009A6545 /* AmIArtist */,
+				9034BC33276CFCF8009A6545 /* AmIArtistTests */,
+				9034BC3D276CFCF8009A6545 /* AmIArtistUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -402,15 +414,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoML42/Pods-AutoML42-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AmIArtist/Pods-AmIArtist-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoML42/Pods-AutoML42-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AmIArtist/Pods-AmIArtist-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoML42/Pods-AutoML42-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AmIArtist/Pods-AmIArtist-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		48ED5D8D6F52AE40BB1D7523 /* [CP] Check Pods Manifest.lock */ = {
@@ -428,7 +440,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AutoML42Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AmIArtistTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -441,15 +453,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoML42-AutoML42UITests/Pods-AutoML42-AutoML42UITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AmIArtist-AmIArtistUITests/Pods-AmIArtist-AmIArtistUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoML42-AutoML42UITests/Pods-AutoML42-AutoML42UITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AmIArtist-AmIArtistUITests/Pods-AmIArtist-AmIArtistUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoML42-AutoML42UITests/Pods-AutoML42-AutoML42UITests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AmIArtist-AmIArtistUITests/Pods-AmIArtist-AmIArtistUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6BF1C62347B34977FF494002 /* [CP] Embed Pods Frameworks */ = {
@@ -458,15 +470,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoML42-AutoML42UITests/Pods-AutoML42-AutoML42UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AmIArtist-AmIArtistUITests/Pods-AmIArtist-AmIArtistUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoML42-AutoML42UITests/Pods-AutoML42-AutoML42UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AmIArtist-AmIArtistUITests/Pods-AmIArtist-AmIArtistUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoML42-AutoML42UITests/Pods-AutoML42-AutoML42UITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AmIArtist-AmIArtistUITests/Pods-AmIArtist-AmIArtistUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8A715413B7BEBE81FC7F87D9 /* [CP] Embed Pods Frameworks */ = {
@@ -475,15 +487,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoML42/Pods-AutoML42-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AmIArtist/Pods-AmIArtist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoML42/Pods-AutoML42-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AmIArtist/Pods-AmIArtist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoML42/Pods-AutoML42-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AmIArtist/Pods-AmIArtist-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D245221E914799230903C994 /* [CP] Check Pods Manifest.lock */ = {
@@ -501,7 +513,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AutoML42-AutoML42UITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AmIArtist-AmIArtistUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -523,7 +535,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AutoML42-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AmIArtist-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -570,12 +582,12 @@
 /* Begin PBXTargetDependency section */
 		9034BC36276CFCF8009A6545 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9034BC1D276CFCF7009A6545 /* AutoML42 */;
+			target = 9034BC1D276CFCF7009A6545 /* AmIArtist */;
 			targetProxy = 9034BC35276CFCF8009A6545 /* PBXContainerItemProxy */;
 		};
 		9034BC40276CFCF8009A6545 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9034BC1D276CFCF7009A6545 /* AutoML42 */;
+			target = 9034BC1D276CFCF7009A6545 /* AmIArtist */;
 			targetProxy = 9034BC3F276CFCF8009A6545 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -718,7 +730,7 @@
 		};
 		9034BC49276CFCF8009A6545 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A15D7DD8D65BFCFBBC90CE6F /* Pods-AutoML42.debug.xcconfig */;
+			baseConfigurationReference = 7D47A6F3548C8EB2E969E210 /* Pods-AmIArtist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -726,7 +738,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54PCB24H6S;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AutoML42/Info.plist;
+				INFOPLIST_FILE = AmIArtist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -747,7 +759,7 @@
 		};
 		9034BC4A276CFCF8009A6545 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C30B9E2F2F84AB2FAB9ABF6C /* Pods-AutoML42.release.xcconfig */;
+			baseConfigurationReference = 9D0BA6BC9EA42F43E8D759A2 /* Pods-AmIArtist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -755,7 +767,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54PCB24H6S;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AutoML42/Info.plist;
+				INFOPLIST_FILE = AmIArtist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -776,7 +788,7 @@
 		};
 		9034BC4C276CFCF8009A6545 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFB696E60CACFB2C634F9BD7 /* Pods-AutoML42Tests.debug.xcconfig */;
+			baseConfigurationReference = 1C205B977B830E1F063CBEF4 /* Pods-AmIArtistTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -796,13 +808,13 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoML42.app/AutoML42";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AmIArtist.app/AmIArtist";
 			};
 			name = Debug;
 		};
 		9034BC4D276CFCF8009A6545 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EB69187D5E21B9D127F7B7F /* Pods-AutoML42Tests.release.xcconfig */;
+			baseConfigurationReference = 077D7848F4129A9C5029648B /* Pods-AmIArtistTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -822,13 +834,13 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoML42.app/AutoML42";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AmIArtist.app/AmIArtist";
 			};
 			name = Release;
 		};
 		9034BC4F276CFCF8009A6545 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BA032E15C98B9DBE341F550 /* Pods-AutoML42-AutoML42UITests.debug.xcconfig */;
+			baseConfigurationReference = 81C2C23C69AA3D3116896EF7 /* Pods-AmIArtist-AmIArtistUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -852,7 +864,7 @@
 		};
 		9034BC50276CFCF8009A6545 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AC3B85712EDADD795C536C9 /* Pods-AutoML42-AutoML42UITests.release.xcconfig */;
+			baseConfigurationReference = 4E9D2C1C71A9F949CFAEBFD5 /* Pods-AmIArtist-AmIArtistUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -877,7 +889,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9034BC19276CFCF6009A6545 /* Build configuration list for PBXProject "AutoML42" */ = {
+		9034BC19276CFCF6009A6545 /* Build configuration list for PBXProject "AmIArtist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9034BC46276CFCF8009A6545 /* Debug */,
@@ -886,7 +898,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9034BC48276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AutoML42" */ = {
+		9034BC48276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AmIArtist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9034BC49276CFCF8009A6545 /* Debug */,
@@ -895,7 +907,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9034BC4B276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AutoML42Tests" */ = {
+		9034BC4B276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AmIArtistTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9034BC4C276CFCF8009A6545 /* Debug */,
@@ -904,7 +916,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9034BC4E276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AutoML42UITests" */ = {
+		9034BC4E276CFCF8009A6545 /* Build configuration list for PBXNativeTarget "AmIArtistUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9034BC4F276CFCF8009A6545 /* Debug */,
