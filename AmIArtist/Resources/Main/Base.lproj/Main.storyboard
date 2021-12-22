@@ -107,6 +107,7 @@
                         <outlet property="backgroundImageView" destination="ZW4-yk-XpR" id="HRK-cr-RJ6"/>
                         <outlet property="clearButton" destination="58i-az-A2G" id="sed-eB-opz"/>
                         <outlet property="detactButton" destination="xpd-Ff-rqb" id="n1I-Dz-GXi"/>
+                        <outlet property="historyButton" destination="lkT-5V-9RT" id="Ij7-Hf-77e"/>
                         <outlet property="popupImageView" destination="Oma-Rz-Zk5" id="6AQ-ci-Zku"/>
                         <outlet property="titleLabel" destination="KTh-dZ-ie6" id="MQt-ix-inm"/>
                         <segue destination="MTV-tJ-ONV" kind="show" identifier="ShowHistorySegue" id="njM-f6-56s"/>

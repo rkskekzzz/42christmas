@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var detactButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var historyButton: UIButton!
+    
     // MARK: - Properties
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -57,18 +59,22 @@ class ViewController: UIViewController {
     private func configureButton() {
         self.addImageButton.layer.cornerRadius = 0.5 * addImageButton.bounds.size.width
         self.addImageButton.clipsToBounds = true
-        self.addImageButton.layer.borderWidth = 1.0
-        self.addImageButton.layer.borderColor = UIColor.white.cgColor
-        self.addImageButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        self.addImageButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.7)
         self.addImageButton.setTitle("이미지 추가", for: .normal)
         self.addImageButton.setTitleColor(UIColor.white, for: .normal)
         
-        self.clearButton.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+        self.clearButton.layer.cornerRadius = 12
+        self.clearButton.clipsToBounds = true
+        self.clearButton.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+        self.clearButton.tintColor = UIColor.white
+        
+        self.historyButton.layer.cornerRadius = 12
+        self.historyButton.clipsToBounds = true
+        self.historyButton.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+        self.historyButton.tintColor = UIColor.white
         
         self.detactButton.layer.cornerRadius = 20
         self.detactButton.clipsToBounds = true
-//        self.detactButton.layer.borderWidth = 1.0
-//        self.detactButton.layer.borderColor = UIColor.white.cgColor
         self.detactButton.backgroundColor = UIColor.purple.withAlphaComponent(0.8)
         self.detactButton.titleLabel?.text = "Start!"
         NSLayoutConstraint.activate([
