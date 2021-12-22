@@ -31,6 +31,7 @@
 		9034BC43276CFCF8009A6545 /* AutoML42UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC42276CFCF8009A6545 /* AutoML42UITests.swift */; };
 		9034BC45276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */; };
 		906277EE2773B72D00CC3562 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 906277ED2773B72D00CC3562 /* .swiftlint.yml */; };
+		906277F02773BE3F00CC3562 /* PaddingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906277EF2773BE3F00CC3562 /* PaddingButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		9034BC42276CFCF8009A6545 /* AutoML42UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoML42UITests.swift; sourceTree = "<group>"; };
 		9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoML42UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		906277ED2773B72D00CC3562 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		906277EF2773BE3F00CC3562 /* PaddingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingButton.swift; sourceTree = "<group>"; };
 		9D0BA6BC9EA42F43E8D759A2 /* Pods-AmIArtist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmIArtist.release.xcconfig"; path = "Target Support Files/Pods-AmIArtist/Pods-AmIArtist.release.xcconfig"; sourceTree = "<group>"; };
 		A15D7DD8D65BFCFBBC90CE6F /* Pods-AutoML42.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoML42.debug.xcconfig"; path = "Target Support Files/Pods-AutoML42/Pods-AutoML42.debug.xcconfig"; sourceTree = "<group>"; };
 		A80E971F8491F939BA3DB7D3 /* Pods_AmIArtist_AmIArtistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmIArtist_AmIArtistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				900BE3E8277216C700D04E8E /* PaddingLabel.swift */,
+				906277EF2773BE3F00CC3562 /* PaddingButton.swift */,
 			);
 			path = CustomUIView;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				900BE3E12770F04A00D04E8E /* HistoryViewController.swift in Sources */,
 				900BE3E9277216C700D04E8E /* PaddingLabel.swift in Sources */,
 				900BE3E7277202D800D04E8E /* HistoryCollectionView.swift in Sources */,
+				906277F02773BE3F00CC3562 /* PaddingButton.swift in Sources */,
 				9034BC24276CFCF7009A6545 /* SceneDelegate.swift in Sources */,
 				900BE3E52771BCF400D04E8E /* HistoryItemViewCell.swift in Sources */,
 			);
@@ -775,7 +779,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -804,7 +808,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
