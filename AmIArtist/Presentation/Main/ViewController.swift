@@ -44,8 +44,11 @@ class ViewController: UIViewController {
            segue.destination as? HistoryViewController != nil,
            userID != nil {
 //            destination.configure() {
+            // 클로저 함수
                 print("\n\nview is changed!\n\n")
 //            }
+        } else if segue.identifier == Self.anotheridentifier {
+            print("test")
         }
     }
     // MARK: - Private
