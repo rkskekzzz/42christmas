@@ -12,6 +12,7 @@ import CoreData
 
 class ViewController: UIViewController {
     static let showHistorySegueIdentifier = "ShowHistorySegue"
+    static let showRankSegueIdentifier = "ShowRankSegue"
     
     // MARK: - IBOutlet
     
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var detactButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var historyButton: UIButton!
+    @IBOutlet weak var rankButton: UIButton!
     
     // MARK: - Properties
     
@@ -31,6 +33,7 @@ class ViewController: UIViewController {
     private var isClearButtonTabbed = false
     private var resultText: String = ""
     private var userID: String?
+    private var confidence: Float = 0
     
     // MARK: - UIViewController
         
@@ -47,8 +50,8 @@ class ViewController: UIViewController {
             // 클로저 함수
                 print("\n\nview is changed!\n\n")
 //            }
-        } else if segue.identifier == Self.anotheridentifier {
-            print("test")
+        } else if segue.identifier == Self.showRankSegueIdentifier, segue.destination as? RankViewController != nil {
+            print("show rank view controller!")
         }
     }
     // MARK: - Private
@@ -85,6 +88,12 @@ class ViewController: UIViewController {
             self.detactButton.widthAnchor.constraint(equalToConstant: 130),
             self.detactButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        
+        self.rankButton.layer.cornerRadius = 12
+        self.rankButton.clipsToBounds = true
+        self.rankButton.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+        self.rankButton.tintColor = UIColor.white
     }
     
     private func configureImageView() {
@@ -154,6 +163,7 @@ class ViewController: UIViewController {
             history.image = imageData
             history.intraID = textFields[0].text
             history.check = check
+            history.confidence = strongSelf.confidence
             
             strongSelf.saveHistory()
             strongSelf.showResult(by: check)
@@ -167,6 +177,9 @@ class ViewController: UIViewController {
 
     // MARK: - IBActions
 
+    @IBAction func rankButtonTabbed(_ sender: Any) {
+        performSegue(withIdentifier: Self.showRankSegueIdentifier, sender: self)
+    }
     @IBAction func historyButtonTabbed(_ sender: Any) {
         performSegue(withIdentifier: Self.showHistorySegueIdentifier, sender: self)
     }
@@ -200,7 +213,8 @@ class ViewController: UIViewController {
             }
             
             strongSelf.resultText = labels[0].text
-            
+            strongSelf.confidence = labels[0].confidence
+
 //            strongSelf.resultText = labels.map { label -> String in
 //              return "Label: \(label.text), Confidence: \(label.confidence), Index: \(label.index)"
 //            }.joined(separator: "\n")

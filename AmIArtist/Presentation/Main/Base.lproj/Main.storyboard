@@ -67,8 +67,8 @@
                                     <action selector="historyButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpK-a7-BDr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58i-az-A2G" userLabel="ClearButton">
-                                <rect key="frame" x="304" y="62" width="40" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58i-az-A2G" userLabel="ClearButton">
+                                <rect key="frame" x="304" y="64" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="aT8-NL-byd"/>
                                     <constraint firstAttribute="width" constant="40" id="x6w-ey-oT9"/>
@@ -79,7 +79,21 @@
                                     <backgroundConfiguration key="background" image="wand.and.stars" catalog="system"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="ClearButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mdk-fi-DZ4"/>
+                                    <action selector="clearButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YG8-Ra-exi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMr-la-SP9">
+                                <rect key="frame" x="254" y="63" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="6Qx-tA-mam"/>
+                                    <constraint firstAttribute="height" constant="40" id="8to-dX-cyJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="crown" catalog="system"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="rankButtonTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OMH-vl-TYE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,7 +103,9 @@
                             <constraint firstItem="58i-az-A2G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="84g-xf-USC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xpd-Ff-rqb" secondAttribute="bottom" constant="40" id="8rH-Qt-qkA"/>
                             <constraint firstItem="lkT-5V-9RT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8yv-3S-LLD"/>
+                            <constraint firstItem="GMr-la-SP9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="BoO-6p-2EL"/>
                             <constraint firstItem="Oma-Rz-Zk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RfJ-4W-7GH"/>
+                            <constraint firstItem="58i-az-A2G" firstAttribute="leading" secondItem="GMr-la-SP9" secondAttribute="trailing" constant="10" id="RvG-TN-cv7"/>
                             <constraint firstItem="ZW4-yk-XpR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TQZ-do-lSi"/>
                             <constraint firstItem="Oma-Rz-Zk5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W4Y-Wz-SzA"/>
                             <constraint firstItem="pLY-ge-3J0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="d84-WO-nvc"/>
@@ -109,8 +125,10 @@
                         <outlet property="detactButton" destination="xpd-Ff-rqb" id="n1I-Dz-GXi"/>
                         <outlet property="historyButton" destination="lkT-5V-9RT" id="Ij7-Hf-77e"/>
                         <outlet property="popupImageView" destination="Oma-Rz-Zk5" id="6AQ-ci-Zku"/>
+                        <outlet property="rankButton" destination="GMr-la-SP9" id="OzI-AW-T3v"/>
                         <outlet property="titleLabel" destination="KTh-dZ-ie6" id="MQt-ix-inm"/>
                         <segue destination="MTV-tJ-ONV" kind="show" identifier="ShowHistorySegue" id="njM-f6-56s"/>
+                        <segue destination="Mig-1r-0sL" kind="show" identifier="ShowRankSegue" id="Fxf-hb-3NP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -131,10 +149,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggj-at-ODU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="135"/>
+            <point key="canvasLocation" x="1543" y="-143"/>
+        </scene>
+        <!--Rank View Controller-->
+        <scene sceneID="csW-Ds-AVg">
+            <objects>
+                <tableViewController id="Mig-1r-0sL" customClass="RankViewController" customModule="AmIArtist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Lik-rM-eNq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankItemCell" id="60q-vq-6WH" customClass="RankItemCell" customModule="AmIArtist" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="60q-vq-6WH" id="AJ7-kv-V3x">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mig-1r-0sL" id="k4s-6k-794"/>
+                            <outlet property="delegate" destination="Mig-1r-0sL" id="9sZ-sV-Rh3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eew-Bv-sih"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0k-17-v31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542" y="520"/>
         </scene>
     </scenes>
     <resources>
+        <image name="crown" catalog="system" width="128" height="92"/>
         <image name="shippingbox" catalog="system" width="128" height="124"/>
         <image name="wand.and.stars" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

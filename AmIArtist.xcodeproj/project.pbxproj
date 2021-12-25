@@ -30,6 +30,8 @@
 		9034BC39276CFCF8009A6545 /* AutoML42Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC38276CFCF8009A6545 /* AutoML42Tests.swift */; };
 		9034BC43276CFCF8009A6545 /* AutoML42UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC42276CFCF8009A6545 /* AutoML42UITests.swift */; };
 		9034BC45276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */; };
+		9058125C2774735A00E17EEE /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9058125B2774735A00E17EEE /* RankViewController.swift */; };
+		90581260277479E200E17EEE /* RankItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9058125F277479E200E17EEE /* RankItemCell.swift */; };
 		906277EE2773B72D00CC3562 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 906277ED2773B72D00CC3562 /* .swiftlint.yml */; };
 		906277F02773BE3F00CC3562 /* PaddingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906277EF2773BE3F00CC3562 /* PaddingButton.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,8 @@
 		9034BC3E276CFCF8009A6545 /* AmIArtistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmIArtistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9034BC42276CFCF8009A6545 /* AutoML42UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoML42UITests.swift; sourceTree = "<group>"; };
 		9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoML42UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9058125B2774735A00E17EEE /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		9058125F277479E200E17EEE /* RankItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankItemCell.swift; sourceTree = "<group>"; };
 		906277ED2773B72D00CC3562 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		906277EF2773BE3F00CC3562 /* PaddingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingButton.swift; sourceTree = "<group>"; };
 		9D0BA6BC9EA42F43E8D759A2 /* Pods-AmIArtist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmIArtist.release.xcconfig"; path = "Target Support Files/Pods-AmIArtist/Pods-AmIArtist.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				900BE3ED2772FB6A00D04E8E /* Main */,
+				9058125A2774733B00E17EEE /* Rank */,
 				900BE39B2770D11200D04E8E /* History */,
 				900BE3EE2772FBFE00D04E8E /* CustomUIView */,
 			);
@@ -253,6 +258,15 @@
 				9034BC44276CFCF8009A6545 /* AutoML42UITestsLaunchTests.swift */,
 			);
 			path = AmIArtistUITests;
+			sourceTree = "<group>";
+		};
+		9058125A2774733B00E17EEE /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				9058125B2774735A00E17EEE /* RankViewController.swift */,
+				9058125F277479E200E17EEE /* RankItemCell.swift */,
+			);
+			path = Rank;
 			sourceTree = "<group>";
 		};
 		E5C549E60DBC67C9CF70E457 /* Pods */ = {
@@ -574,10 +588,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9058125C2774735A00E17EEE /* RankViewController.swift in Sources */,
 				9034BC26276CFCF7009A6545 /* ViewController.swift in Sources */,
 				900BE3DF2770DB4D00D04E8E /* DataModel.xcdatamodeld in Sources */,
 				9034BC22276CFCF7009A6545 /* AppDelegate.swift in Sources */,
 				900BE3E12770F04A00D04E8E /* HistoryViewController.swift in Sources */,
+				90581260277479E200E17EEE /* RankItemCell.swift in Sources */,
 				900BE3E9277216C700D04E8E /* PaddingLabel.swift in Sources */,
 				900BE3E7277202D800D04E8E /* HistoryCollectionView.swift in Sources */,
 				906277F02773BE3F00CC3562 /* PaddingButton.swift in Sources */,

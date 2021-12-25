@@ -67,6 +67,10 @@ class HistoryViewController: UIViewController {
         let request: NSFetchRequest<History> = History.fetchRequest()
         do {
             histories = try context.fetch(request)
+            
+            histories.forEach{ history in
+                print("\(history.intraID ?? "empty...") : \(history.confidence) ")
+            }
         } catch {
             print("fetch error \(error)")
         }
